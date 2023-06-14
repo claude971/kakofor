@@ -13,6 +13,7 @@ class Accueil extends BaseController
     
     public function view($page = 'home')
     {
+        // Rchercher la page demandée dans le dossier Views
         if (! is_file(APPPATH . 'Views/' . $page . '.php')) {
             // Pas de page pour ce qui est demandé
             throw new PageNotFoundException($page);
