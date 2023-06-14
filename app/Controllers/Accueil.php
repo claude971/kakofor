@@ -18,8 +18,10 @@ class Accueil extends BaseController
             throw new PageNotFoundException($page);
         }
 
+        // Données transférées à la vue demandée
         $data['title'] = ucfirst($page); // Capitalize the first letter
 
+        // Afficher la vue avec en-tête et pied-de-page
         return view('templates/header', $data)
             . view($page)
             . view('templates/footer');
